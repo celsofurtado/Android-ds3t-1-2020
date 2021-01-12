@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="imagem_do_jogo">Imagem do jogo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">Resident Evil 3, chamado no Japão de Biohazard RE:3, é um jogo eletrônico de survival horror desenvolvido e publicado pela Capcom.</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home_24"/>
+
+    <item
+        android:id="@+id/menu_games"
+        android:title="Games"
+        android:icon="@drawable/ic_console"/>
+
+    <item
+        android:id="@+id/menu_consoles"
+        android:title="Consoles"
+        android:icon="@drawable/ic_game_boy"/>
+
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_person_24"/>
+
+</menu>
