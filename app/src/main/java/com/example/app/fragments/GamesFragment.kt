@@ -11,6 +11,7 @@ import com.example.app.R
 import com.example.app.adapter.GamesRecyclerAdapter
 import com.example.app.data.DataSource
 import com.example.app.model.Game
+import kotlinx.android.synthetic.main.fragment_games.*
 
 class GamesFragment : Fragment() {
 
@@ -28,7 +29,7 @@ class GamesFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_games, container, false)
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(true) // Isso que vai permitir colocar o menu na toolbar do fragment
 
         gamesRecyclerView = view.findViewById(R.id.recycler_view_jogos)
         gamesRecyclerView.layoutManager = LinearLayoutManager(view.context)
