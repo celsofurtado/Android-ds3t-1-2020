@@ -2,16 +2,15 @@ package com.example.app.fragments
 
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.R
 import com.example.app.adapter.GamesRecyclerAdapter
-import com.example.app.data.DataSource
+import com.example.app.data.GameDataSource
 import com.example.app.model.Game
-import kotlinx.android.synthetic.main.fragment_games.*
 
 class GamesFragment : Fragment() {
 
@@ -19,8 +18,11 @@ class GamesFragment : Fragment() {
     private val gameAdapter = GamesRecyclerAdapter()
     private var gameList = listOf<Game>()
 
+    private lateinit var buttonGameAdd: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -34,19 +36,19 @@ class GamesFragment : Fragment() {
         gamesRecyclerView = view.findViewById(R.id.recycler_view_jogos)
         gamesRecyclerView.layoutManager = LinearLayoutManager(view.context)
         gamesRecyclerView.adapter = gameAdapter
-        gameList = DataSource.getGames(context!!)
+        gameList = GameDataSource.getGames(context!!)
         gameAdapter.updateGameList(gameList)
+
+        buttonGameAdd = view.findViewById(R.id.button_game_add)
+        buttonGameAdd.setOnClickListener {
+            Toast.makeText(context!!, "clicou!", Toast.LENGTH_SHORT).show()
+        }
 
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Definindo a toolbar do fragment
-        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
-        toolbar.title = "Games"
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
     }
 

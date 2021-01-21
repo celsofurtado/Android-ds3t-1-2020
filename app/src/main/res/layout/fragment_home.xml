@@ -8,7 +8,7 @@
     tools:context=".fragments.HomeFragment"
     android:background="@android:color/holo_green_dark">
 
-    <include layout="@layout/toolbar"/>
+<!--    <include layout="@layout/toolbar"/>-->
 
     <TextView
         android:layout_width="wrap_content"

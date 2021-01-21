@@ -4,7 +4,10 @@
 
     <item
         android:id="@+id/menu_new_game"
-        android:title="Adicionar Game"
-        app:showAsAction="always" />
+        android:title="Adicionar Game" />
+
+    <item
+        android:id="@+id/menu_exit"
+        android:title="Sair" />
 
 </menu>

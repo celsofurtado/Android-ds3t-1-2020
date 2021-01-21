@@ -4,13 +4,30 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".fragments.GamesFragment">
 
-<include layout="@layout/toolbar"/>
+<!--<include layout="@layout/toolbar"/>-->
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recycler_view_jogos"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:listitem="@layout/game_view_holder_layout"
-    android:layout_below="@+id/toolbar"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_jogos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        tools:listitem="@layout/game_view_holder_layout"
+        android:fitsSystemWindows="true"
+        android:layout_below="@+id/toolbar"/>
+
+    <ImageButton
+        android:id="@+id/button_game_add"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_add_24"
+        android:background="@drawable/circle_button"
+        android:tint="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+
 
 </RelativeLayout>
