@@ -33,14 +33,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(R.layout.navigation_drawer_layout)
 
-        doAsync {
-            AppDataBase.get(application)
-                .consoleDao()
-                .insertConsole(arrayListOf(
-                    Console(100, "X-Box ONe", "Microsoft", "2013-11-05"),
-                    Console(200, "Switch", "Nintendo", "2017-03-03"))
-                )
-        }
+//        doAsync {
+//            AppDataBase.get(application)
+//                .consoleDao()
+//                .insertConsole(arrayListOf(
+//                    Console(300, "X-Box 360", "Microsoft", "2013-11-05"),
+//                    Console(400, "Mega Drive", "Sega", "2017-03-03"))
+//                )
+//        }
 
         gamesFragment = GamesFragment()
         consolesFragment = ConsolesFragment()

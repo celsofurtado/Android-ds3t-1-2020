@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.R
 import com.example.app.adapter.GamesRecyclerAdapter
-import com.example.app.data.GameDataSource
+import com.example.app.data.GameRepository
 import com.example.app.model.Game
 
 class GamesFragment : Fragment() {
@@ -36,7 +36,7 @@ class GamesFragment : Fragment() {
         gamesRecyclerView = view.findViewById(R.id.recycler_view_jogos)
         gamesRecyclerView.layoutManager = LinearLayoutManager(view.context)
         gamesRecyclerView.adapter = gameAdapter
-        gameList = GameDataSource.getGames(context!!)
+        gameList = GameRepository.getGames(context!!)
         gameAdapter.updateGameList(gameList)
 
         buttonGameAdd = view.findViewById(R.id.button_game_add)

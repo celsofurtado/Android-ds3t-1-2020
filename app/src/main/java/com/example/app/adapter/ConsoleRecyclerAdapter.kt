@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.R
-import com.example.app.data.ConsoleDataSource
 import com.example.app.holder.ConsoleViewHolder
 import com.example.app.model.Console
 
@@ -13,7 +12,7 @@ class ConsoleRecyclerAdapter : RecyclerView.Adapter<ConsoleViewHolder>() {
     private var consoleList = listOf<Console>()
 
     fun updateConsoleList(newConsoleList: List<Console>){
-        this.consoleList = newConsoleList
+        consoleList = newConsoleList
         notifyDataSetChanged()
     }
 
@@ -31,7 +30,6 @@ class ConsoleRecyclerAdapter : RecyclerView.Adapter<ConsoleViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ConsoleViewHolder, position: Int) {
-        val console = consoleList[position]
-        holder.bind(console)
+        holder.bind(consoleList[position])
     }
 }

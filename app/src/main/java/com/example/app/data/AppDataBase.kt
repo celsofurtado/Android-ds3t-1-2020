@@ -1,6 +1,6 @@
 package com.example.app.data
 
-import android.app.Application
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -14,19 +14,30 @@ abstract class AppDataBase : RoomDatabase() {
 
     companion object {
 
+        private lateinit var INSTANCE: AppDataBase
+
+        fun getDatabase(context: Context) : AppDataBase {
+            if (!::INSTANCE.isInitialized){
+                synchronized(AppDataBase::class) { // garante que apenas 1 instancia exista mesmo com muitos núcleos de processador
+                    INSTANCE = Room.databaseBuilder(context, AppDataBase::class.java, "games").allowMainThreadQueries().build()
+                }
+            }
+            return INSTANCE
+        }
+
         @JvmField
         val MIGRATION_5_6 = Migration5To6()
 
 //        @JvmField
 //        val MIGRATION_6_7 = Migration6To7()
 
-        fun get(application: Application) : AppDataBase {
+        fun get(context: Context) : AppDataBase {
 
 //            return Room.databaseBuilder(application, AppDataBase::class.java, "games")
 //                .addMigrations(MIGRATION_6_7)
 //                .build()
 
-            return Room.databaseBuilder(application, AppDataBase::class.java, "games")
+            return Room.databaseBuilder(context, AppDataBase::class.java, "games")
                 .fallbackToDestructiveMigration()
                 .build()
         }

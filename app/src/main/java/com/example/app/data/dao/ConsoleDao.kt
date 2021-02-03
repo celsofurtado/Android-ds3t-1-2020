@@ -1,21 +1,25 @@
 package com.example.app.data.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.app.model.Console
 
 @Dao
 interface ConsoleDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertConsole(list: List<Console>)
+    @Insert
+    fun insertConsole(console: Console)
 
-    @Query("SELECT * FROM console")
+    @Update
+    fun updateConsole(console: Console)
+
+    @Delete
+    fun deleteConsole(console: Console)
+
+    @Query("SELECT * FROM console ORDER BY consoleName ASC")
     fun getAll(): List<Console>
 
-//    @Insert
-//    fun insertAll(vararg consoles: Console)
+    @Query("SELECT * FROM console WHERE id = :id")
+    fun get(id: Int) : Console
+
 
 }

@@ -4,9 +4,7 @@
     android:color="@android:color/white">
     <item>
         <shape android:shape="oval">
-            <gradient android:startColor="@color/colorAccent" android:endColor="@color/colorPrimary"/>
-            <stroke android:color="@android:color/white" android:width="1dp"/>
-
+            <gradient android:startColor="@android:color/holo_green_dark" android:endColor="@android:color/holo_green_light"/>
         </shape>
     </item>
 </ripple>

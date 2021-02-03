@@ -10,4 +10,11 @@
         android:id="@+id/menu_exit"
         android:title="Sair" />
 
+    <item android:title="Dados gerais" >
+        <group>
+            <item android:id="@+id/menu_teste" android:title="Teste 001"/>
+            <item android:id="@+id/menu_teste2" android:title="Teste 002"/>
+        </group>
+    </item>
+
 </menu>
